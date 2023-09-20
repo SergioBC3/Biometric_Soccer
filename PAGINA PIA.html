@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biometricsoccer</title>
+    <link rel="stylesheet" type="text/css" href="estiloss1.css">
+    <style>
+        /* Estilos para el encabezado */
+        header {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(112, 210, 255, 0.918);
+            text-align: center;
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
+
+        /* Estilos para el título del encabezado */
+        header h1 {
+            margin: 0;
+            padding: 10px;
+            color: azure;
+        }
+
+        /* Estilos para el menú de navegación */
+        nav.menu {
+            text-align: center;
+        }
+
+        /* Estilos para los elementos del menú */
+        nav.menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav.menu ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav.menu ul li:last-child {
+            margin-right: 0;
+        }
+
+        /* Estilos para el contenido principal */
+        body {
+            text-align: center;
+        }
+
+        /* Estilos para el formulario de inicio de sesión y registro */
+        .login-form {
+            margin: 0 auto; /* Centrar horizontalmente */
+            width: 300px;
+            padding: 20px;
+        }
+
+        .login-form h1 {
+            font-size: 24px;
+            color: #da4012;
+        }
+
+        .input {
+            margin-bottom: 15px;
+        }
+
+        .input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .check {
+            text-align: left;
+        }
+
+        .check input {
+            margin-right: 5px;
+        }
+
+        /* Estilos para las tarjetas de productos */
+        .product-card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgb(255, 255, 255);
+            margin: 20px auto; /* Centrar horizontalmente */
+        }
+
+        .product-card img {
+            max-width: 100%;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #007bff;
+        }
+
+        /* Estilos para el pie de página */
+        .footer {
+            text-align: center;
+            background-color: rgba(82, 215, 255, 0.918);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><CENTER>BIENVENIDO A BIOMETRIC SOCCER</CENTER></h1>
+    </header>
+
+    
+    <nav class="menu">
+        <nav class="menu li">
+            <ol> 
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Productos">Productos</a></li>
+                <li><a href="#Servicios">Servicios</a></li>
+                <li><a href="#Iniciar sesion">Contacto</a></li>
+                <li><a href="#Registrarse">Registrarse</a></li>
+            </ol>
+        </nav>
+
+    <h1>biometricsoccer</h1>
+
+    <form action="/busqueda" method="get">
+        <input type="search" name="q" placeholder="Buscar..." />
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div class="login-form">
+        <h1>PLATAFORMA DE INGRESO</h1>
+        <div class="input">
+            <input type="text" class="input1" placeholder="USUARIO:" required>
+        </div>
+    
+        <div class="input">
+            <input type="password" class="input1" placeholder="CONTRASEÑA:" required>
+        </div>
+    
+        <div class="check">
+            <label> <input type="checkbox">Recordarme</label>
+            <br>
+         
+            <a href="#"> ¿Olvido su contraseña?</a>
+        </div>
+    
+        <div class="button">
+            <button class="btn"> Ingresar </button>
+        </div>
+    
+        <div class="sign-up"> <p> ¿Necesita ayuda?</p>
+            <a href="#"> Siguiente</a>
+        </div>
+    </div>
+
+    <form action="Programa.php" method="POST" class="login-form">
+        <h1>Registrarse</h1>
+        <div class="input">
+            <input type="text" placeholder="Texto">
+        </div>
+        <div class="input">
+            <input type="number" min="10" max="50" required step="3" placeholder="Número">
+        </div>
+        <div class="input">
+            <input type="date" placeholder="Fecha">
+        </div>
+        <div class="input">
+            <input type="password" placeholder="Contraseña">
+        </div>
+        <div class="input">
+            <input type="color" placeholder="Color">
+        </div>
+        <div class="input">
+            <input type="tel" placeholder="Teléfono">
+        </div>
+        <div class="input">
+            <input type="email" placeholder="Correo">
+        </div>
+        <div class="input">
+            <input type="month" placeholder="Mes y día actual">
+        </div>
+        <div class="input">
+            <input type="time" placeholder="Hora">
+        </div>
+        <div class="button">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+
+    <div class="product-card">
+        <img src="https://static.dafiti.com.co/p/nike-5148-1228361-1-catalog-new.jpg" alt="Producto">
+        <div class="product-title">CANILLERAS</div>
+        <div class="product-price">$20.000</div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://golty.com.co/wp-content/uploads/2022/10/balon-futbol-score-by-golty-tribal-amarillo-n5-blanco-amarillo2.png" alt="Producto">
+        <div class="product-title">balon de futbol</div>
+        <div class="product-price">$35.500</div>
+    </div>
+    
+
+    <div class="footer">
+        <img src="https://phoneky.co.uk/thumbs/screensavers/down/sports/balonadida_y1xey8ua.gif" alt="Imagen">
+    </div>
+    <footer>
+        <!-- Pie de página -->
+        <center><p>&copy; 2023 BIOMETRICSOCCER</p></center>
+    </footer>
+</body>
+</html>
+
+
