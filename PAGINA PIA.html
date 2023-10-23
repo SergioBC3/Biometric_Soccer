@@ -1,221 +1,149 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>biometricsoccer</title>
-    <link rel="stylesheet" type="text/css" href="estiloss1.css">
-    <style>
-        /* Estilos para el encabezado */
-        header {
-            width: 100%;
-            height: 50px;
-            background-color: rgba(112, 210, 255, 0.918);
-            text-align: center;
-            margin: 0 auto; /* Centrar horizontalmente */
-        }
-
-        /* Estilos para el título del encabezado */
-        header h1 {
-            margin: 0;
-            padding: 10px;
-            color: azure;
-        }
-
-        /* Estilos para el menú de navegación */
-        nav.menu {
-            text-align: center;
-        }
-
-        /* Estilos para los elementos del menú */
-        nav.menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav.menu ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav.menu ul li:last-child {
-            margin-right: 0;
-        }
-
-        /* Estilos para el contenido principal */
-        body {
-            text-align: center;
-        }
-
-        /* Estilos para el formulario de inicio de sesión y registro */
-        .login-form {
-            margin: 0 auto; /* Centrar horizontalmente */
-            width: 300px;
-            padding: 20px;
-        }
-
-        .login-form h1 {
-            font-size: 24px;
-            color: #da4012;
-        }
-
-        .input {
-            margin-bottom: 15px;
-        }
-
-        .input input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .check {
-            text-align: left;
-        }
-
-        .check input {
-            margin-right: 5px;
-        }
-
-        /* Estilos para las tarjetas de productos */
-        .product-card {
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgb(255, 255, 255);
-            margin: 20px auto; /* Centrar horizontalmente */
-        }
-
-        .product-card img {
-            max-width: 100%;
-        }
-
-        .product-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .product-price {
-            font-size: 16px;
-            color: #007bff;
-        }
-
-        /* Estilos para el pie de página */
-        .footer {
-            text-align: center;
-            background-color: rgba(82, 215, 255, 0.918);
-            padding: 10px;
-        }
-    </style>
+    <title>BIOMETRICSOCCER</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1><CENTER>BIENVENIDO A BIOMETRIC SOCCER</CENTER></h1>
+
+    <header class="header">
+        <video autoplay loop muted  class="back-video">
+        <source src="img/futbol.mp4.mp4" type="video/mp4">
+    </video>
+    </header>
+    <header class="l-header" id="header">
+
+        <nav class="nav tk-container">
+            <a href="#" class="nav_logo">BIOMETRICSOCCER</a>
+            <div class="nav_menu">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#home" class="nav_link active-link">Inicio</a></li>
+                    <li class="nav_item"><a href="#about" class="nav_link">Nosotros</a></li>
+                    <li class="nav_item"><a href="#menu" class="nav_link">Catalogo</a></li>
+                    <li class="nav_item"><a href="#contact" class="nav_link">Contacto</a></li>
+                </ul>
+            </div>
+        
+
+            <div class="nav_toggle">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
     </header>
 
-    
-    <nav class="menu">
-        <nav class="menu li">
-            <ol> 
-                <li><a href="#Inicio">Inicio</a></li>
-                <li><a href="#Productos">Productos</a></li>
-                <li><a href="#Servicios">Servicios</a></li>
-                <li><a href="#Iniciar sesion">Contacto</a></li>
-                <li><a href="#Registrarse">Registrarse</a></li>
-            </ol>
-        </nav>
+    <main class="l-main">
 
-    <h1>biometricsoccer</h1>
+        <section class="home" id="home">
+            <div class="home_container tk_container tk-grid">
+                <div class="home_data">
+                    <h1 class="home_title">BIOMETRICSOCCER</h1>
+                    <h2 class="home_subtitle">Seguridad para el<br>Futbol</h2>
+                    <a href="#" class="button">Ingresar</a>
+                    <a href="#" class="button">Registrarse</a>
+                </div>
+            </div>
+        </section>
 
-    <form action="/busqueda" method="get">
-        <input type="search" name="q" placeholder="Buscar..." />
-        <button type="submit">Buscar</button>
-    </form>
+        <section class="about section tk-container" id="about">
+            <div class="about_container tk-grid">
+                <div class="about_data">
+                    <span class="section-subtitle about_initial">Nosotros</span>
+                    <h2 class="section-title about_initial">BIOMETRICSOCCER</h2>
+                    <p class="about_description">Somos un equipo de tecnologia avanzada encargada de ayudar a la seguridad de las personas en las canchas de Futbol y en diferentes entornos.</p>
+                </div>
+                <div class="about_data">
+                    <img src="img/Cancha.jpg" alt="" class="about_img">
+                </div>
+            </div>
+        </section>
 
-    <div class="login-form">
-        <h1>PLATAFORMA DE INGRESO</h1>
-        <div class="input">
-            <input type="text" class="input1" placeholder="USUARIO:" required>
-        </div>
-    
-        <div class="input">
-            <input type="password" class="input1" placeholder="CONTRASEÑA:" required>
-        </div>
-    
-        <div class="check">
-            <label> <input type="checkbox">Recordarme</label>
-            <br>
-         
-            <a href="#"> ¿Olvido su contraseña?</a>
-        </div>
-    
-        <div class="button">
-            <button class="btn"> Ingresar </button>
-        </div>
-    
-        <div class="sign-up"> <p> ¿Necesita ayuda?</p>
-            <a href="#"> Seguir</a>
-        </div>
-    </div>
 
-    <form action="Programa.php" method="POST" class="login-form">
-        <h1>Registrarse</h1>
-        <div class="input">
-            <input type="text" placeholder="Texto">
-        </div>
-        <div class="input">
-            <input type="number" min="10" max="50" required step="3" placeholder="Número">
-        </div>
-        <div class="input">
-            <input type="date" placeholder="Fecha">
-        </div>
-        <div class="input">
-            <input type="password" placeholder="Contraseña">
-        </div>
-        <div class="input">
-            <input type="color" placeholder="Color">
-        </div>
-        <div class="input">
-            <input type="tel" placeholder="Teléfono">
-        </div>
-        <div class="input">
-            <input type="email" placeholder="Correo">
-        </div>
-        <div class="input">
-            <input type="month" placeholder="Mes y día actual">
-        </div>
-        <div class="input">
-            <input type="time" placeholder="Hora">
-        </div>
-        <div class="button">
-            <input type="submit" value="Enviar">
-        </div>
-    </form>
+        <section class="menu section tk-container" id="menu">
+            <h2 class="section-title">Catalogo de productos</h2>
+            <div class="menu_container tk-grid">
 
-    <div class="product-card">
-        <img src="https://static.dafiti.com.co/p/nike-5148-1228361-1-catalog-new.jpg" alt="Producto">
-        <div class="product-title">CANILLERAS</div>
-        <div class="product-price">$20.000</div>
-    </div>
+                <div class="menu_content">
+                    <img src="img/baloon.png" class="menu_img" alt="">
+                    <h3 class="menu_name">Balon de Futbol</h3>
+                    <span class="menu_detail">Balon de Futbol</span>
+                    <span class="menu_preci">$25.000</span>
+                    <a href="#" class="button menu_button"><i class="bx bx-cart-alt"></i></a>
+                </div>
+                <div class="menu_content">
+                    <img src="img/canilleras.png.jpg" class="menu_img" alt="">
+                    <h3 class="menu_name">Canilleras</h3>
+                    <span class="menu_detail">Canilleras</span>
+                    <span class="menu_preci">$15.000</span>
+                    <a href="#" class="button menu_button"><i class="bx bx-cart-alt"></i></a>
+                </div>
+                <div class="menu_content">
+                    <img src="img/maleta.png" class="menu_img" alt="">
+                    <h3 class="menu_name">Maleta de futbol</h3>
+                    <span class="menu_detail">Maleta de futbol</span>
+                    <span class="menu_preci">$150.000</span>
+                    <a href="#" class="button menu_button"><i class="bx bx-cart-alt"></i></a>
+                </div>
+        </section>
 
-    <div class="product-card">
-        <img src="https://golty.com.co/wp-content/uploads/2022/10/balon-futbol-score-by-golty-tribal-amarillo-n5-blanco-amarillo2.png" alt="Producto">
-        <div class="product-title">balon de futbol</div>
-        <div class="product-price">$35.500</div>
-    </div>
-    
+        <section class="app section tk-container">
+            <div class="app_container tk-grid">
+                <div class="app_data">
+                    <span class="section-subtitle app_initial">App</span>
+                    <h2 class="section-title app_initial">Descarga la App</h2>
+                    <p class="app_description">Biometricsoccer</p>
+                    <div class="app_stores">
+                        <a href="#"><img src="img/app1.png" alt="" class="app_store"></a>
+                        <a href="#"><img src="img/app2.png" alt="" class="app_store"></a>
+                    </div>
+                </div>
+                
+                    <img src="img/celular.png" alt="" class="app_img">
+                
+            </div>
+        </section>
 
-    <div class="footer">
-        <img src="https://phoneky.co.uk/thumbs/screensavers/down/sports/balonadida_y1xey8ua.gif" alt="Imagen">
-    </div>
-    <footer>
-        <!-- Pie de página -->
-        <center><p>&copy; 2023 BIOMETRICSOCCER</p></center>
+        <section class="contact section tk-container" id="contact">
+            <div class="contact_container tk-grid">
+                <div class="contact_data"> 
+                    <span class="section-subtitle contact_initial">Hablanos</span>
+                    <h2 class="section-title contact_initial">Contacto</h2>
+                    <p>Dayana Garcia Romero </p>
+                    <br>
+                        <p> dayanag634@gmail.com </p>
+                        <br>
+                        <p> Sergio Luis Bohorquez </p>
+                        <br>
+                        <p> sergiobohorquez18@gmail.com </p>
+                </div>
+                <div class="contact_button">
+                    <a href="#" class="button">Contactanos</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer section tk-container">
+        <div class="footer_container tk-grid">
+            <div class="footer_content">
+                <a href="#" class="footer_logo">App</a>
+                <span class="footer_description">Seguridad para el futbol</span>
+                <div>
+                    <a href="#" class="footer_social"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="footer_social"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="footer_social"><i class="bx bxl-twitter"></i></a>
+                </div>
+            </div>
+        <p class="footer_copy">&#169; 2023 BIOMETRICSOCCER</p>
+
     </footer>
+    
+    
 </body>
 </html>
-
+        
 
