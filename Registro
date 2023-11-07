@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIOMETRICSOCCER</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <form>
@@ -14,8 +14,8 @@
 <input type="tel" placeholder="Telefono">
 <input type="password" placeholder="Contraseña">
 
-<a href="login.html"> Ya tienes cuenta iniciar sesion ?</a>
-<input type="submit" class="btn-1" value="Registrar">
+<a href="login.html"> Ya tengo cuenta</a>
+<a href="login.html"> Registrar</a>
 
 </form>
 </body>
