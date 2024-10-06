@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometricsoccer - Informes y Comentarios</title>
+    <style>
+        *,::before,::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: .938rem;
+            background-color: #e3e7e6;
+            color: #474747;
+            line-height: 1.6;
+        }
+        h1, h2, h3, p, ul {
+            margin: 0;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+        }
+        .section {
+            padding: 2rem 0;
+        }
+        .section-title, .section-subtitle {
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #393939;
+            margin-bottom: 1.5rem;
+        }
+        .section-subtitle {
+            font-size: 1.5rem;
+            display: block;
+            color: #38bdf1;
+            font-weight: 500;
+            margin-bottom: .5rem;
+        }
+        .tk-container {
+            max-width: 960px;
+            width: calc(100% - 2rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tk-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        h2 {
+            text-align: left;
+            color: #38bdf1;
+        }
+        form {
+            background-color: #ffffff34;
+            padding: 2rem;
+            border-radius: .5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        form label, p {   
+            display: block;
+            margin-bottom: .5rem;
+            color: #9393d1;
+        }
+        form input[type="text"],
+        form input[type="date"],
+        form textarea {
+            width: 100%;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: .25rem;
+        }
+        form button {
+            width: 100%;
+            padding: .75rem;
+            border: none;
+            border-radius: .25rem;
+            background-color: #38bdf1;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #4fc4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            color: #474747;
+        }
+        th {
+            background-color: #38bdf1;
+            color: #fff;
+        }
+        .feedback {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: .5rem;
+        }
+        .feedback h4 {
+            margin-bottom: .5rem;
+            color: #474747;
+        }
+        .feedback p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h2 class="section-title">Espacio para Comentarios</h2>
+        <form id="feedbackForm" action="#" method="POST">
+            <label for="nombre-jugador">Tu nombre:</label>
+            <input type="text" id="nombre-jugador" name="nombre-jugador" placeholder="Escribe tu nombre" required>
+
+            <label for="nombre-equipo">Nombre del equipo:</label>
+            <input type="text" id="nombre-equipo" name="nombre-equipo" placeholder="Escribe el nombre del equipo" required>
+
+            <label for="fecha-comentarios">Fecha:</label>
+            <input type="date" id="fecha-comentarios" name="fecha-comentarios" required>
+
+            <label for="comentarios">Deja tus comentarios sobre el rendimiento:</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Escribe tus comentarios aquí..." required></textarea>
+
+            <button type="submit">Enviar Comentarios</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Equipo</th>
+                    <th>Fecha</th>
+                    <th>Comentarios</th>
+                </tr>
+            </thead>
+            <tbody id="feedbackTableBody">
+                <!-- Los comentarios se añadirán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('nombre-jugador').value;
+            let team = document.getElementById('nombre-equipo').value;
+            let date = document.getElementById('fecha-comentarios').value;
+            let comentarios = document.getElementById('comentarios').value;
+
+            let tableBody = document.getElementById('feedbackTableBody');
+            let newRow = document.createElement('tr');
+            
+            newRow.innerHTML = `<td>${name}</td>
+                                <td>${team}</td>
+                                <td>${date}</td>
+                                <td>${comentarios}</td>`;
+            
+            tableBody.appendChild(newRow);
+            
+            document.getElementById('feedbackForm').reset();
+        });
+    </script>
+
+</body>
+</html>
