@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIOMETRICSOCCER</title>
-    <link rel="stylesheet" href="style2.css">
-</head>
-<body>
-<form>
-<h2> registrate </h2>
-<input type="text" placeholder="Nombre">
-<input type="email" placeholder="Correo">
-<input type="tel" placeholder="Telefono">
-<input type="password" placeholder="Contraseña">
-
-<a href="login.html"> Ya tengo cuenta</a>
-<a href="login.html"> Registrar</a>
-
-</form>
-</body>
-</html>
+<div class="form-container">
+                        <section id="registro">
+                            <h2>REGISTRARSE</h2>
+                            <form action="http://localhost:3000/procesar_registro" method="post">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                                <label for="password">Contraseña:</label>
+                                <input type="password" id="password" name="password" required>
+                                <input type="submit" value="Registrarse">
+                            </form>
+                        </section>
