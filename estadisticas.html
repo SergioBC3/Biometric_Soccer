@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Jugadores de Fútbol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,::before,::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: .938rem;
+            background-color: #e3e7e6;
+            color: #474747;
+            line-height: 1.6;
+        }
+        h1, h2, h3, p, ul {
+            margin: 0;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+        }
+        .section {
+            padding: 2rem 0;
+        }
+        .section-title, .section-subtitle {
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #393939;
+            margin-bottom: 1.5rem;
+        }
+        .section-subtitle {
+            font-size: 1.5rem;
+            display: block;
+            color: #38bdf1;
+            font-weight: 500;
+            margin-bottom: .5rem;
+        }
+        .tk-container {
+            max-width: 960px;
+            width: calc(100% - 2rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tk-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        h2 {
+            text-align: left;
+            color: #38bdf1;
+        }
+        form {
+            background-color: #ffffff34;
+            padding: 2rem;
+            border-radius: .5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        form label, p {
+            display: block;
+            margin-bottom: .5rem;
+            color: #9393d1;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="number"],
+        form input[type="password"] {
+            width: 100%;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: .25rem;
+        }
+        form button {
+            width: 100%;
+            padding: .75rem;
+            border: none;
+            border-radius: .25rem;
+            background-color: #38bdf1;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #4fc4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #080808;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            color: #def7ec;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="tk-container">
+            <h1 class="section-title">Estadísticas de Jugadores de Fútbol</h1>
+
+            <form id="playerForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="team">Equipo:</label>
+                <input type="text" id="team" name="team" required>
+
+                <label for="position">Posición:</label>
+                <input type="text" id="position" name="position" required>
+
+                <label for="goals">Goles:</label>
+                <input type="number" id="goals" name="goals" required>
+
+                <label for="assists">Asistencias:</label>
+                <input type="number" id="assists" name="assists" required>
+
+                <button type="submit">Agregar Jugador</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Equipo</th>
+                        <th>Posición</th>
+                        <th>Goles</th>
+                        <th>Asistencias</th>
+                        <th>Recomendaciones</th>
+                    </tr>
+                </thead>
+                <tbody id="playersTableBody">
+                    <!-- Aquí se añadirán las filas de los jugadores -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function generateRecommendations(position, goals, assists) {
+            let recommendations = "";
+
+            switch(position.toLowerCase()) {
+                case "delantero":
+                    if (goals < 2) {
+                        recommendations += "Mejorar la precisión de los tiros y buscar mejores posiciones de remate. ";
+                    }
+                    if (assists < 1) {
+                        recommendations += "Trabajar en la visión de juego y en crear oportunidades para los compañeros. ";
+                    }
+                    if (goals >= 2 && assists >= 1) {
+                        recommendations += "Mantener el buen trabajo y seguir afinando la puntería y la creación de jugadas. ";
+                    }
+                    break;
+                case "mediocampista":
+                    if (assists < 2) {
+                        recommendations += "Participar más en la creación de juego y buscar pases clave. ";
+                    }
+                    if (goals < 1) {
+                        recommendations += "Aportar más en la ofensiva con tiros desde fuera del área. ";
+                    }
+                    if (assists >= 2 && goals >= 1) {
+                        recommendations += "Seguir siendo el motor del equipo y mantener la creatividad en el campo. ";
+                    }
+                    break;
+                case "defensa":
+                    if (goals < 1) {
+                        recommendations += "Aportar en jugadas a balón parado como corners y tiros libres. ";
+                    }
+                    if (goals >= 1) {
+                        recommendations += "Seguir contribuyendo en jugadas ofensivas sin descuidar la defensa. ";
+                    }
+                    recommendations += "Mejorar la marcación y anticipación para evitar ataques del rival. ";
+                    break;
+                case "portero":
+                    recommendations += "Trabajar en la agilidad, reflejos y comunicación con la defensa. ";
+                    break;
+                default:
+                    recommendations += "Entrenar en las áreas específicas de tu posición y buscar siempre mejorar. ";
+                    break;
+            }
+
+            return recommendations;
+        }
+
+        document.getElementById('playerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let team = document.getElementById('team').value;
+            let position = document.getElementById('position').value;
+            let goals = document.getElementById('goals').value;
+            let assists = document.getElementById('assists').value;
+
+            let recommendations = generateRecommendations(position, goals, assists);
+            
+            let tableBody = document.getElementById('playersTableBody');
+            let newRow = document.createElement('tr');
+            
+            newRow.innerHTML = `<td>${name}</td>
+                                <td>${team}</td>
+                                <td>${position}</td>
+                                <td>${goals}</td>
+                                <td>${assists}</td>
+                                <td>${recommendations}</td>`;
+            
+            tableBody.appendChild(newRow);
+            
+            document.getElementById('playerForm').reset();
+        });
+    </script>
+</body>
+</html>
+
